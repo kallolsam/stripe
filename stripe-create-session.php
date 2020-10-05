@@ -1,13 +1,13 @@
 <?php
 
 //require 'vendor/autoload.php';
-require '../stripe-php-master/init.php';
+require 'stripe-php-master/init.php';
 //\Stripe\Stripe::setApiKey('sk_test_51HWuVJDkt38z7w7ydHb0wlnPOyjPPdCzRVfoOhY3ZCEAsyosFufq3vnklAG065jrktyrFXEb2CxnOG3aMf033LD900Ivw9SGHB');
 \Stripe\Stripe::setApiKey('sk_test_51HWuVJDkt38z7w7ydHb0wlnPOyjPPdCzRVfoOhY3ZCEAsyosFufq3vnklAG065jrktyrFXEb2CxnOG3aMf033LD900Ivw9SGHB');
 
 header('Content-Type: application/json');
 
-$YOUR_DOMAIN = 'http://localhost/test/stripe/my-test/';
+$YOUR_DOMAIN = 'http://localhost/test/my-stripe-test/';
 
 $checkout_session = \Stripe\Checkout\Session::create([
   'payment_method_types' => ['card'],
@@ -16,8 +16,8 @@ $checkout_session = \Stripe\Checkout\Session::create([
       'quantity' => 1,
     ]],
   'mode' => 'subscription',
-  'success_url' => $YOUR_DOMAIN . '/success.html',
-  'cancel_url' => $YOUR_DOMAIN . '/cancel.html',
+  'success_url' => $YOUR_DOMAIN . '/success.php',
+  'cancel_url' => $YOUR_DOMAIN . '/cancel.php',
   'locale' => 'en-GB',
 ]);
 

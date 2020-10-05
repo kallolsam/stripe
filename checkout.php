@@ -1,11 +1,11 @@
 <?php
-require '../stripe-php-master/init.php';
+require 'stripe-php-master/init.php';
 $stripe = new \Stripe\StripeClient(
   'sk_test_51HWuVJDkt38z7w7ydHb0wlnPOyjPPdCzRVfoOhY3ZCEAsyosFufq3vnklAG065jrktyrFXEb2CxnOG3aMf033LD900Ivw9SGHB'
 );
 
 $all_countries = $stripe->countrySpecs->all();
-print "<pre>";print_r($all_countries);
+//print "<pre>";print_r($all_countries);
 
 
 $all_prices = $stripe->prices->all(['active'=>true,'product'=>'prod_I7A0eL8jbPPdW8']);
