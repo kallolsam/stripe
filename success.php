@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Thanks for your order!</title>
+  <title>Thanks for your order!!</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
